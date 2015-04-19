@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>ROCK - PAPER - SCISSORS</title>
+    <style>
+        input[type="radio"] {
+            margin-left: 10px;
+        }
+        #footer {
+            text-align: center;        
+        }
+    </style>
+</head>
+<body>
+       <div class='container'>
+          <h1>Rock - Paper - Scissors</h1>
+          <p>Play now to see who wins!</p>
+        <form action='/view_game'>
+            <div class='form-group'>
+                    <legend>Player 1 choice:</legend>
+                    <input type="radio" name="player1" value="Rock"> Rock
+                    <input type="radio" name="player1" value="Paper"> Paper
+                    <input type="radio" name="player1" value="Scissors"> Scissors
+            </div>
+          <div class='form-group'>
+                    <legend>Player 2 choice:</legend>
+                    <input type="radio" name="player2" value="Rock"> Rock
+                    <input type="radio" name="player2" value="Paper"> Paper
+                    <input type="radio" name="player2" value="Scissors"> Scissors
+            </div>
+            <button type='submit' class='btn-success'>Check who wins!</button>
+        </form>
+        </div>
+
+        <div class="container">
+          {% if winner is not empty %}
+                <h3>Winner : {{ winner }}</h3>              
+          {% endif %}      
+        </div>
+        <div id="footer">
+            <img src="img/rock_paper_scissors.jpg">
+        </div>
+</body>
+</html>
